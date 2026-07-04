@@ -9,6 +9,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-jammy
 
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +19,6 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps
       - run: npm run lint
       - run: npm test
       - run: npm run build
