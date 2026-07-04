@@ -28,4 +28,4 @@ Previews the production build locally.
 
 ## CI/CD
 
-[GitHub Actions](https://github.com/JonnyPugh/JonnyPugh.github.io/actions) runs `lint` → `test` → `build` on every push and PR to `source`, then deploys the `dist/` folder to the `gh-pages` branch for GitHub Pages.
+[GitHub Actions](https://github.com/JonnyPugh/JonnyPugh.github.io/actions) runs `lint` → `test` → `build` on every push and PR to `source`, then deploys the `dist/` folder to the `master` branch for GitHub Pages.
