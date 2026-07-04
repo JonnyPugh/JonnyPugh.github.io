@@ -2,61 +2,26 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JonnyPugh.github.io",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@material-ui/core": "^4.4.0",
-    "@material-ui/icons": "^4.2.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-ga": "^2.6.0",
-    "react-scripts": "3.1.1"
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "svelte-check",
+    "test": "playwright test",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.18.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-all": "CI=true npm test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src",
-    "lint-fix": "eslint src --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "prettier",
-      "plugin:prettier/recommended"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "trailingComma": "all",
-    "semi": false
-  },
-  "pre-commit": [
-    "lint",
-    "test-all"
-  ],
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@playwright/test": "^1.61.1",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@tsconfig/svelte": "^5.0.8",
+    "husky": "^9.1.7",
+    "playwright": "^1.61.1",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.7.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.0"
   }
 }
