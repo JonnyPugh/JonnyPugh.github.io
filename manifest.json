@@ -1,0 +1,15 @@
+{
+  "short_name": "Jonny Pugh",
+  "name": "Jonny Pugh's Personal Website",
+  "icons": [
+    {
+      "src": "favicon.jpg",
+      "sizes": "2656x2656",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1c1917",
+  "background_color": "#1c1917"
+}
