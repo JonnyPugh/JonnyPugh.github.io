@@ -1,4 +1,4 @@
-# [JonnyPugh.github.io](https://jonnypugh.github.io) &middot; [![Build Status](https://travis-ci.org/JonnyPugh/JonnyPugh.github.io.svg?branch=source)](https://travis-ci.org/JonnyPugh/JonnyPugh.github.io)
+# [JonnyPugh.github.io](https://jonnypugh.github.io) &middot; ![CI](https://github.com/JonnyPugh/JonnyPugh.github.io/actions/workflows/ci.yml/badge.svg)
 
 Personal website built with [Svelte](https://svelte.dev) + [Vite](https://vitejs.dev) + [Tailwind CSS](https://tailwindcss.com).
 
@@ -28,4 +28,4 @@ Previews the production build locally.
 
 ## CI/CD
 
-[Travis CI](https://travis-ci.org/JonnyPugh/JonnyPugh.github.io) runs `lint` → `test` → `build` on every push to the `source` branch, then deploys the `dist/` folder to the `master` branch for GitHub Pages.
+[GitHub Actions](https://github.com/JonnyPugh/JonnyPugh.github.io/actions) runs `lint` → `test` → `build` on every push and PR to `source`, then deploys the `dist/` folder to the `master` branch for GitHub Pages.
