@@ -1,5 +1,56 @@
 <script>
   import { fadeSlide } from './actions'
+
+  const roles = [
+    {
+      title: 'Senior SDE — Devices Sustainability',
+      date: '2025 — Present',
+      company: 'Amazon',
+      location: 'Arlington VA',
+      accent: 'primary',
+      bullets: [
+        'Architected the first-to-industry AI-informed LCA solution, achieving <1% variance and automating 90% of the carbon footprint calculation process',
+        'Collaborated with AWS and Stores Sustainability teams on foundational LCA automation and corporate carbon footprint reporting solutions',
+        'Mentored the organization on engineering practices and AI fluency to scale the team\'s impact',
+      ],
+    },
+    {
+      title: 'Senior SDE — Devices Privacy',
+      date: '2019 — 2025',
+      company: 'Amazon',
+      location: 'Arlington VA',
+      accent: 'primary',
+      bullets: [
+        'Conceived and established the Alexa anonymization platform, enabling data analysis and model training with petabytes of privacy-preserving text data',
+        'Developed and scaled the foundational privacy systems that continuously verify appropriate data handling controls for all systems across Amazon',
+        'Pioneered a novel zero-operator access private compute architecture at Amazon, protecting Bee customer data and enabling Amazon to acquire Bee',
+      ],
+    },
+    {
+      title: 'Senior Software Engineer — Risk Tech',
+      date: '2018 — 2019',
+      company: 'Capital One',
+      location: 'Tysons VA',
+      accent: 'accent',
+      bullets: [
+        'Designed the microservice architecture and built Capital One\'s model governance system of record',
+        'Reinvented the CI/CD pipeline to standardize testing, accelerate releases, and iterate faster',
+        'Championed new technologies and mentored engineers across the Risk Tech organization',
+      ],
+    },
+    {
+      title: 'Software Engineer — Finance Tech',
+      date: '2017 — 2018',
+      company: 'Capital One',
+      location: 'Richmond VA',
+      accent: 'accent',
+      bullets: [
+        'Created the first AWS finance data lake at Capital One for critical modeling and regulatory use cases',
+        'Owned a finance metadata search app from hackathon concept to production deployment',
+        'Championed serverless architecture adoption and automated the software delivery pipeline',
+      ],
+    },
+  ]
 </script>
 
 <section id="experience">
@@ -11,54 +62,23 @@
       <h2 class="text-xl font-bold text-white">Experience</h2>
     </div>
     <div class="space-y-6">
-      <div class="bg-surface-800/50 border border-surface-700/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-[border-color,box-shadow] duration-200" use:fadeSlide>
-        <div class="flex items-start justify-between mb-1">
-          <h3 class="text-lg font-semibold text-white">Senior SDE — Devices Sustainability</h3>
-          <span class="text-xs text-surface-500 bg-surface-800 px-3 py-1 rounded-full border border-surface-700">2025 — Present</span>
+      {#each roles as role, i}
+        <div
+          class="bg-surface-800/50 border border-surface-700/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-[border-color,box-shadow] duration-200"
+          use:fadeSlide={{ delay: i * 80 }}
+        >
+          <div class="flex items-start justify-between mb-1">
+            <h3 class="text-lg font-semibold text-white">{role.title}</h3>
+            <span class="text-xs text-surface-500 bg-surface-800 px-3 py-1 rounded-full border border-surface-700">{role.date}</span>
+          </div>
+          <p class="text-sm mb-4 font-medium {role.accent === 'primary' ? 'text-primary-400' : 'text-accent-400'}">{role.company} — {role.location}</p>
+          <ul class="text-surface-300 text-sm space-y-1.5 list-disc pl-5">
+            {#each role.bullets as bullet}
+              <li class="pl-1">{bullet}</li>
+            {/each}
+          </ul>
         </div>
-        <p class="text-primary-400 font-medium text-sm mb-4">Amazon — Arlington VA</p>
-        <ul class="text-surface-300 text-sm space-y-1.5 list-disc list-inside">
-          <li>Architected and built the first-to-industry AI-informed LCA solution, automating 90% of the process with &lt;1% carbon footprint variance vs. manual baselines</li>
-          <li>Collaborated with AWS and Stores Sustainability teams on LCA automation and carbon footprint data pipeline architecture</li>
-          <li>Mentored the organization on engineering practices and AI fluency to scale the team's impact</li>
-        </ul>
-      </div>
-      <div class="bg-surface-800/50 border border-surface-700/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-[border-color,box-shadow] duration-200" use:fadeSlide={{ delay: 80 }}>
-        <div class="flex items-start justify-between mb-1">
-          <h3 class="text-lg font-semibold text-white">Senior SDE — Devices Privacy</h3>
-          <span class="text-xs text-surface-500 bg-surface-800 px-3 py-1 rounded-full border border-surface-700">2019 — 2025</span>
-        </div>
-        <p class="text-primary-400 font-medium text-sm mb-4">Amazon — Arlington VA</p>
-        <ul class="text-surface-300 text-sm space-y-1.5 list-disc list-inside">
-          <li>Architected and created the Alexa data anonymization platform that anonymizes petabytes of text data using a novel text anonymization model</li>
-          <li>Built and scaled the foundational privacy systems that verified appropriate data handling controls for all systems across Amazon</li>
-          <li>Invented the first-to-Amazon zero-operator access private compute architecture, enabling Amazon to acquire Bee</li>
-        </ul>
-      </div>
-      <div class="bg-surface-800/50 border border-surface-700/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-[border-color,box-shadow] duration-200" use:fadeSlide={{ delay: 160 }}>
-        <div class="flex items-start justify-between mb-1">
-          <h3 class="text-lg font-semibold text-white">Senior Software Engineer — Risk Tech</h3>
-          <span class="text-xs text-surface-500 bg-surface-800 px-3 py-1 rounded-full border border-surface-700">2018 — 2019</span>
-        </div>
-        <p class="text-accent-400 font-medium text-sm mb-4">Capital One — McLean VA</p>
-        <ul class="text-surface-300 text-sm space-y-1.5 list-disc list-inside">
-          <li>Built the web app and microservices powering Capital One's Model governance system of record</li>
-          <li>Delivered business-critical features as microservices and reinvented the CI/CD pipeline for automated iteration</li>
-          <li>Championed new technologies and mentored engineers across the Risk Tech organization</li>
-        </ul>
-      </div>
-      <div class="bg-surface-800/50 border border-surface-700/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-[border-color,box-shadow] duration-200" use:fadeSlide={{ delay: 240 }}>
-        <div class="flex items-start justify-between mb-1">
-          <h3 class="text-lg font-semibold text-white">Software Engineer — Finance Tech</h3>
-          <span class="text-xs text-surface-500 bg-surface-800 px-3 py-1 rounded-full border border-surface-700">2017 — 2018</span>
-        </div>
-        <p class="text-accent-400 font-medium text-sm mb-4">Capital One — Richmond VA</p>
-        <ul class="text-surface-300 text-sm space-y-1.5 list-disc list-inside">
-          <li>Built the first AWS Finance data lake at Capital One for critical modeling and regulatory use cases</li>
-          <li>Owned a Finance metadata search app from hackathon concept to production deployment</li>
-          <li>Championed serverless architecture adoption and automated the software delivery pipeline</li>
-        </ul>
-      </div>
+      {/each}
     </div>
   </div>
 </section>
